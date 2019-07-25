@@ -8,6 +8,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.remote.DesiredCapabilities;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.testng.Assert;
 import org.testng.annotations.AfterSuite;
 import org.testng.annotations.BeforeSuite;
 import org.testng.annotations.Test;
@@ -46,12 +47,12 @@ public class Appiumtest {
 	{
 
 		
- 
 		driver.findElement(linktext).sendKeys("Qainfotech.com");
 		driver.findElement(Click_button).click();
 		driver.findElement(Click_linktext).click();
 		String title=driver.getTitle();
 		System.out.println(title);
+		Assert.assertEquals("QA InfoTech | Your Software Testing Partner", title);
 	}
 	@AfterSuite
 	public void close_driver()
